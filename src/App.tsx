@@ -88,7 +88,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center">
           <div className="relative z-10">
             <img
-  src="public/static/images/profile.jpg"
+  src="/static/images/profile.jpg"
   alt="Profile"
   className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full mx-auto mb-8 border-4 border-blue-500 shadow-xl object-cover"
   style={{ objectPosition: 'center' }} // Ensures the image is centered
