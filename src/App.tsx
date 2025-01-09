@@ -364,15 +364,162 @@ function App() {
             </div>
           </section>
 
-          {/* Projects Section */}
           <section id="projects" className="py-20 bg-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-semibold mb-8 text-center">Projects</h2>
-              <div className="space-y-8">
-                {/* Add project details similarly */}
-              </div>
-            </div>
-          </section>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* White Box Wrapper */}
+    <div className="bg-white rounded-lg shadow-lg p-8">
+      {/* Section Title */}
+      <h2 className="text-3xl font-semibold mb-8 text-center">Projects</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {/* Project 1 */}
+  <div className="min-w-[280px] bg-white p-4 rounded-lg shadow-lg">
+    <img 
+      src="/static/images/Dark Pattern.jpeg" 
+      alt="Dark Patterns Detector" 
+      className="rounded-lg w-full h-40 object-cover mb-4" 
+    />
+    <h3 className="text-xl font-bold text-black mb-2">Dark Patterns Detector</h3>
+    <p className="text-gray-700 text-sm mb-4">
+      A web app to detect "dark patterns" on e-commerce websites using NLP and BERT for classification.
+    </p>
+    <div className="flex flex-wrap gap-2 mb-4">
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">NLP</span>
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">BERT</span>
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Random Forest</span>
+    </div>
+    <a 
+      href="https://github.com/your-github-link-here" 
+      className="text-purple-600 hover:text-purple-800 transition-colors flex items-center space-x-2"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Github className="w-5 h-5" />
+      <span className="text-sm font-medium">View on Github</span>
+    </a>
+  </div>
+
+  {/* Project 2 */}
+  <div className="min-w-[280px] bg-white p-4 rounded-lg shadow-lg relative group">
+  <div className="relative group">
+  {/* Internship Dot */}
+  <div 
+    className="absolute top-2 right-2 w-3 h-3 rounded-full bg-red-500 group-hover:scale-110 transition-transform cursor-pointer"
+  ></div>
+
+  {/* Tooltip */}
+  <div 
+    className="absolute top-6 right-2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity"
+  >
+    Internship
+  </div>
+</div>
+
+    {/* Project Image */}
+    <img 
+      src="/static/images/Feedback.jpeg" 
+      alt="Customer Feedback Analysis Tool" 
+      className="rounded-lg w-full h-40 object-cover mb-4 " 
+    />
+    
+    {/* Project Title */}
+    <h3 className="text-xl font-bold text-black mb-2">Customer Feedback Analysis Tool</h3>
+    
+    {/* Project Description */}
+    <p className="text-gray-700 text-sm mb-4">
+      Prototype for analyzing customer feedback using time series analysis and forecasting to detect trends.
+    </p>
+    
+    {/* Tags */}
+    <div className="flex flex-wrap gap-2 mb-4">
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Time Series</span>
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Forecasting</span>
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Data Viz</span>
+    </div>
+    
+    {/* GitHub Link */}
+    <a 
+      href="https://github.com/your-github-link-here" 
+      className="text-purple-600 hover:text-purple-800 transition-colors flex items-center space-x-2"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Github className="w-5 h-5" />
+      <span className="text-sm font-medium">View on Github</span>
+    </a>
+  </div>
+
+  {/* Project 3 */}
+  <div className="min-w-[280px] bg-white p-4 rounded-lg shadow-lg">
+    <img 
+      src="/static/images/ISL.jpeg" 
+      alt="ISL to Text Converter" 
+      className="rounded-lg w-full h-40 object-cover mb-4" 
+    />
+    <h3 className="text-xl font-bold text-black mb-2">ISL to Text Converter</h3>
+    <p className="text-gray-700 text-sm mb-4">
+      Real-time Indian Sign Language to text conversion app using Mediapipe and YOLO.
+    </p>
+    <div className="flex flex-wrap gap-2 mb-4">
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">NLP</span>
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Mediapipe</span>
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">YOLO</span>
+    </div>
+    <a 
+      href="https://github.com/your-github-link-here" 
+      className="text-purple-600 hover:text-purple-800 transition-colors flex items-center space-x-2"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Github className="w-5 h-5" />
+      <span className="text-sm font-medium">View on Github</span>
+    </a>
+  </div>
+
+  {/* Project 4 */}
+  <div className="min-w-[280px] bg-white p-4 rounded-lg shadow-lg relative group">
+  <div className="relative group">
+  {/* Internship Dot */}
+  <div 
+    className="absolute top-2 right-2 w-3 h-3 rounded-full bg-red-500 group-hover:scale-110 transition-transform cursor-pointer"
+  ></div>
+
+  {/* Tooltip */}
+  <div 
+    className="absolute top-6 right-2 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity"
+  >
+    Internship
+  </div>
+</div>
+
+    <img 
+      src="/static/images/SMITBOT.jpg" 
+      alt="Interactive Smart Toy" 
+      className="rounded-lg w-full h-40 object-cover mb-4" 
+    />
+    <h3 className="text-xl font-bold text-black mb-2">Interactive Smart Toy</h3>
+    <p className="text-gray-700 text-sm mb-4">
+      Built a smart toy with offline Q&A capability using Raspberry Pi, TTS, and LLaMA models.
+    </p>
+    <div className="flex flex-wrap gap-2 mb-4">
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">TTS</span>
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Raspberry Pi</span>
+      <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">LLaMA</span>
+    </div>
+    <a 
+      href="https://github.com/your-github-link-here" 
+      className="text-purple-600 hover:text-purple-800 transition-colors flex items-center space-x-2"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Github className="w-5 h-5" />
+      <span className="text-sm font-medium">View on Github</span>
+    </a>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
 
           {/* Hobbies Section */}
           <section id="hobbies" className="py-20">
