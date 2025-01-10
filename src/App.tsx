@@ -179,25 +179,25 @@ function App() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Wrapper div for white rectangle and shadow */}
       <div className="bg-white rounded-lg shadow-2xl p-6 about-section mx-auto">
-        <div className="flex items-center space-x-8">
-          {/* Left Side (Image) */}
-          <div className="w-1/2">
+        <div className="flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0 lg:space-x-8">
+          {/* Image Section */}
+          <div className="w-full lg:w-1/2">
             <img
               src="/static/images/Thushara.jpg"
               alt="Thushara"
-              className="rounded-full shadow-lg w-60 h-680 object-cover mx-auto"
+              className="rounded-full shadow-lg w-full max-w-xs lg:w-60 h-auto object-cover mx-auto"
             />
           </div>
-          {/* Right Side (Text) */}
-          <div className="w-1/2">
+          {/* Text Section */}
+          <div className="w-full lg:w-1/2">
             <div className="bg-purple-400 text-white rounded-xl p-8 shadow-xl">
-              <h2 className="text-3xl font-semibold mb-4">About Me</h2>
+              <h2 className="text-3xl font-semibold mb-4 text-center lg:text-left">About Me</h2>
               <p>
                 I'm Thushara, a final-year student at Sikkim Manipal Institute of Technology, pursuing B.Tech in Artificial Intelligence and Data Science with a deep passion for Economics.
                 I'm a creator at heart, whether it's through crafting innovative AI solutions, capturing the world through my photography, or designing visuals that tell compelling stories. I also enjoy video editing and bringing creative ideas to life through design.
                 As a violinist and flautist, music adds rhythm and harmony to my life, teaching me the value of precision and creativity. Coupled with my love for travel, every experience I gather inspires my personal and professional growth.
               </p>
-              <p className="text-white leading-relaxed mt-4">
+              <p className="text-white leading-relaxed mt-4 text-center lg:text-left">
                 Let's build something extraordinary together!
               </p>
             </div>
