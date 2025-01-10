@@ -139,7 +139,7 @@ function App() {
     </div>
   </section>
 
-  <div className="bg-gray-200 p-15 rounded-xl shadow-xl border-[30px] border-black">
+  <div className="bg-gray-200 p-15 rounded-xl shadow-xl">
   {/* About Section */}
   <section id="about" className="py-20 bg-gray-200 flex items-center justify-center ">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
