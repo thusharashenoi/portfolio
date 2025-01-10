@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, MapPin, X, Pencil, Paperclip, Github, Medal, School2, Shield, ChevronLeft, ChevronRight, Videotape, Linkedin, AwardIcon, Mail, Code, Briefcase, User, Users, Clipboard, Heart, BookOpen, Award, Music, Camera, Globe, Trophy, School } from 'lucide-react';
+import { Menu, MapPin, X, Pencil, Paperclip, Github, Medal, School2, Shield, Linkedin, AwardIcon, Mail, Code, Briefcase, User, Users, Clipboard, Heart, BookOpen, Award, Music, Camera, Globe, Trophy,} from 'lucide-react';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -14,43 +14,6 @@ function App() {
   
   const handleOpenVakilModal = () => setIsVakilModalOpen(true);
   const handleCloseVakilModal = () => setIsVakilModalOpen(false);  
-
-  const Carousel = ({ images }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-  
-    const goToPrevious = () => {
-      setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-    };
-  
-    const goToNext = () => {
-      setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-    };
-  
-    return (
-      <div className="relative w-full h-40">
-        <div className="carousel-item w-full h-full">
-          <img 
-            src={images[currentIndex]} 
-            alt={`photo-${currentIndex}`} 
-            className="w-full h-full object-cover" 
-          />
-        </div>
-        <button 
-          className="absolute top-1/2 left-2 transform -translate-y-1/2 text-white bg-black p-2 rounded-full"
-          onClick={goToPrevious}
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button 
-          className="absolute top-1/2 right-2 transform -translate-y-1/2 text-white bg-black p-2 rounded-full"
-          onClick={goToNext}
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
-      </div>
-    );
-  };
-
   
   const navigation = [
     { id: 'about', label: 'About', icon: User },
@@ -73,73 +36,73 @@ function App() {
         </svg>
       </div>
 
-      {/* Navigation */}
-      <nav className="fixed w-full bg-black/90 backdrop-blur-sm z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex-shrink-0 font-bold text-xl">
-              <span className="text-purple-400">Shenoi </span><span className="text-white">Thushara</span>
-            </div>
+{/* Navigation */}
+<nav className="fixed w-full bg-black/90 backdrop-blur-sm z-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-between h-16">
+      <div className="flex-shrink-0 font-bold text-xl">
+        <span className="text-purple-400">Shenoi </span><span className="text-white">Thushara</span>
+      </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="flex space-x-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.id}
-                    href={`#${item.id}`}
-                    onClick={() => setActiveSection(item.id)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      activeSection === item.id
-                        ? 'bg-purple-600 text-white'
-                        : 'text-gray-300 hover:bg-purple-900'
-                    }`}
-                  >
-                    <item.icon className="inline-block w-4 h-4 mr-2" />
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md text-gray-400 hover:text-white hover:bg-purple-900"
-              >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
-          </div>
+      {/* Desktop Navigation */}
+      <div className="hidden md:block">
+        <div className="flex space-x-4">
+          {navigation.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={() => setActiveSection(item.id)}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                activeSection === item.id
+                  ? 'bg-purple-600 text-white'
+                  : 'text-gray-300 hover:bg-purple-900'
+              }`}
+            >
+              <item.icon className="inline-block w-4 h-4 mr-2" />
+              {item.label}
+            </a>
+          ))}
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  onClick={() => {
-                    setActiveSection(item.id);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
-                    activeSection === item.id
-                      ? 'bg-purple-600 text-white'
-                      : 'text-gray-300 hover:bg-purple-900'
-                  }`}
-                >
-                  <item.icon className="inline-block w-4 h-4 mr-2" />
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </nav>
+      {/* Mobile menu button */}
+      <div className="md:hidden">
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="p-2 rounded-md text-gray-400 hover:text-white hover:bg-purple-900"
+        >
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {/* Mobile Navigation */}
+  {isMenuOpen && (
+    <div className="md:hidden bg-black/90 backdrop-blur-sm">
+      <div className="px-2 pt-2 pb-3 space-y-1 text-center">
+        {navigation.map((item) => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            onClick={() => {
+              setActiveSection(item.id);
+              setIsMenuOpen(false);
+            }}
+            className={`block px-4 py-2 rounded-md text-base font-medium text-left ${
+              activeSection === item.id
+                ? 'bg-purple-600 text-white'
+                : 'text-gray-300 hover:bg-purple-900'
+            } transition-all mx-auto`}
+          >
+            <item.icon className="inline-block w-4 h-4 mr-2" />
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+</nav>
 
 {/* Main Content */}
 <main className="relative">
@@ -178,7 +141,7 @@ function App() {
 
   <div className="bg-gray-200 p-15 rounded-xl shadow-xl border-[30px] border-black">
   {/* About Section */}
-  <section id="about" className="py-20 bg-gray-200 flex items-center justify-center border-[30px] border-black">
+  <section id="about" className="py-20 bg-gray-200 flex items-center justify-center ">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Wrapper div for white rectangle and shadow */}
       <div className="bg-white rounded-lg shadow-2xl p-6 about-section mx-auto">
@@ -251,12 +214,12 @@ function App() {
     </div>
   )}
 
-<section id="education" className="py-20 bg-gray-50 min-h-screen flex items-center justify-center border-[30px] border-black">
+<section id="education" className="py-20 bg-gray-50 min-h-screen flex items-center justify-center">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 className="text-4xl font-extrabold mb-12 text-center text-gray-800">Education</h2>
-    <div className="flex space-x-16 justify-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
       {/* 2019 */}
-      <div className="w-80 bg-white border-4 border-purple-600 rounded-lg shadow-lg p-6 text-center">
+      <div className="w-full sm:w-80 bg-white border-4 border-purple-600 rounded-lg shadow-lg p-6 text-center">
         <h3 className="text-xl font-bold text-gray-700">2019</h3>
         <p className="text-sm text-gray-600 mt-2">
           Completed Grade 10<br />
@@ -268,7 +231,7 @@ function App() {
       </div>
 
       {/* 2021 */}
-      <div className="w-80 bg-white border-4 border-purple-600 rounded-lg shadow-lg p-6 text-center">
+      <div className="w-full sm:w-80 bg-white border-4 border-purple-600 rounded-lg shadow-lg p-6 text-center">
         <h3 className="text-xl font-bold text-gray-700">2021</h3>
         <p className="text-sm text-gray-600 mt-2">
           Completed 12th Grade<br />
@@ -280,7 +243,7 @@ function App() {
       </div>
 
       {/* 2025 */}
-      <div className="w-80 bg-white border-4 border-purple-600 rounded-lg shadow-lg p-6 text-center">
+      <div className="w-full sm:w-80 bg-white border-4 border-purple-600 rounded-lg shadow-lg p-6 text-center">
         <h3 className="text-xl font-bold text-gray-700">2025</h3>
         <p className="text-sm text-gray-600 mt-2">
           Completed B.Tech in Artificial Intelligence and Data Science<br />
@@ -296,7 +259,7 @@ function App() {
 </section>
 
 {/* Experience Section */}
-<section id="experience" className="py-20 bg-gray-100 border-[30px] border-black">
+<section id="experience" className="py-20 bg-gray-100">
       <div className="bg-white rounded-lg shadow-2xl p-6">
       <h2 className="text-3xl font-semibold mb-8 text-center">Experience</h2>
     <div className="flex items-center space-x-4">
@@ -481,7 +444,7 @@ function App() {
   </div>
 </section>
 {/* Skills Section */}
-<section id="skills" className="py-20 bg-gray-100 flex justify-center items-center min-h-screen border-[30px] border-black">
+<section id="skills" className="py-20 bg-gray-100 flex justify-center items-center min-h-screen">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">Skills</h2>
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12 justify-center">
@@ -575,7 +538,7 @@ function App() {
 
 
 
-          <section id="projects" className="py-20 bg-gray-100 border-[30px] border-black">
+          <section id="projects" className="py-20 bg-gray-100">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     {/* White Box Wrapper */}
     <div className="bg-white rounded-lg shadow-lg p-8">
@@ -732,7 +695,7 @@ function App() {
 </section>
 
 {/* Hobbies Section */}
-<section id="hobbies" className="py-20 flex justify-center items-center border-[30px] border-black bg-gray"> {/* Added light purple background */}
+<section id="hobbies" className="py-20 flex justify-center items-center"> {/* Added light purple background */}
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 className="text-3xl font-semibold mb-8 text-center">Hobbies</h2>
     <div className="bg-white shadow-lg rounded-lg p-8"> {/* Wrapper for shadow and padding */}
@@ -810,11 +773,8 @@ function App() {
   </div>
 </section>
 
-
-
-
           {/* Achievements Section */}
-<section id="achievements" className="py-20 bg-gray-100 border-[30px] border-black">
+<section id="achievements" className="py-20 bg-gray-100">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 className="text-3xl font-semibold mb-8 text-center">Achievements</h2>
 
