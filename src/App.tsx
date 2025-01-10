@@ -834,7 +834,12 @@ function App() {
   </div>
 </section>
 <footer className="bg-gray-800 text-white text-center py-4">
-  <p>Year: {new Date().getFullYear()} | All rights belong to Thushara Shenoi</p>
+  <p className="text-sm">
+    &copy; {new Date().getFullYear()} Thushara Shenoi. All rights reserved.
+  </p>
+  <p className="text-xs">
+    Last updated: January 10, 2025
+  </p>
 </footer>
       </main>
 </div>
