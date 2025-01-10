@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, MapPin, X, Github, Linkedin, Mail, Code, Briefcase, User, Heart, BookOpen, Award, Music, Camera, Globe, Film, Trophy, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
+import { Menu, MapPin, X, Pencil, ChefHat, Github, Medal,ShieldCheckIcon, CheckSquare, Shield, ChevronLeft, ChevronRight, Videotape, Linkedin, AwardIcon, Mail, Code, Briefcase, User, Users, Clipboard, Heart, BookOpen, Award, Music, Camera, Globe, Film, Trophy } from 'lucide-react';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -11,9 +11,45 @@ function App() {
   const handleCloseDellModal = () => setIsDellModalOpen(false);
   
   const handleOpenVakilModal = () => setIsVakilModalOpen(true);
-  const handleCloseVakilModal = () => setIsVakilModalOpen(false);
-  
+  const handleCloseVakilModal = () => setIsVakilModalOpen(false);  
 
+  const Carousel = ({ images }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+  
+    const goToPrevious = () => {
+      setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    };
+  
+    const goToNext = () => {
+      setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    };
+  
+    return (
+      <div className="relative w-full h-40">
+        <div className="carousel-item w-full h-full">
+          <img 
+            src={images[currentIndex]} 
+            alt={`photo-${currentIndex}`} 
+            className="w-full h-full object-cover" 
+          />
+        </div>
+        <button 
+          className="absolute top-1/2 left-2 transform -translate-y-1/2 text-white bg-black p-2 rounded-full"
+          onClick={goToPrevious}
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button 
+          className="absolute top-1/2 right-2 transform -translate-y-1/2 text-white bg-black p-2 rounded-full"
+          onClick={goToNext}
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+    );
+  };
+
+  
   const navigation = [
     { id: 'about', label: 'About', icon: User },
     { id: 'experience', label: 'Experience', icon: Briefcase },
@@ -520,30 +556,192 @@ function App() {
 </div>
 </section>
 
+{/* Hobbies Section */}
+<section id="hobbies" className="py-20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl font-semibold mb-8 text-center">Hobbies</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+      {/* Photography */}
+      <div className="text-center bg-white shadow-lg rounded-lg p-4">
+        <h3 className="text-2xl font-semibold mb-4 flex justify-center items-center">
+          <Camera className="w-6 h-6 text-gray-500 mr-2" /> Photography
+        </h3>
+        <Carousel images={[
+          '/static/images/Feedback.jpeg',
+          '/static/images/Dark Pattern.jpeg', // Replace with more images
+          '/static/images/SMITBOT.jpg'
+        ]} />
+      </div>
 
-          {/* Hobbies Section */}
-          <section id="hobbies" className="py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-semibold mb-8 text-center">Hobbies</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <Music className="w-12 h-12 mx-auto text-purple-600" />
-                  <p className="mt-2">Violin & Flute</p>
-                </div>
-                {/* Add other hobbies similarly */}
-              </div>
-            </div>
-          </section>
+      {/* Travelling */}
+      <div className="text-center bg-white shadow-lg rounded-lg p-4">
+        <h3 className="text-2xl font-semibold mb-4 flex justify-center items-center">
+          <Globe className="w-6 h-6 text-gray-500 mr-2" /> Travelling
+        </h3>
+        <Carousel images={[
+          '/static/images/Feedback.jpeg',
+          '/static/images/Feedback.jpeg', // Replace with more images
+          '/static/images/Feedback.jpeg'
+        ]} />
+      </div>
+
+      {/* Video Editing */}
+      <div className="text-center bg-white shadow-lg rounded-lg p-4">
+        <h3 className="text-2xl font-semibold mb-4 flex justify-center items-center">
+          <Videotape className="w-6 h-6 text-gray-500 mr-2" /> Video Editing
+        </h3>
+        <Carousel images={[
+          '/static/images/Feedback.jpeg',
+          '/static/images/Feedback.jpeg', // Replace with more images
+          '/static/images/Feedback.jpeg'
+        ]} />
+      </div>
+
+      {/* Sketching */}
+      <div className="text-center bg-white shadow-lg rounded-lg p-4">
+        <h3 className="text-2xl font-semibold mb-4 flex justify-center items-center">
+          <Pencil className="w-6 h-6 text-gray-500 mr-2" /> Sketching
+        </h3>
+        <Carousel images={[
+          '/static/images/Feedback.jpeg',
+          '/static/images/Feedback.jpeg', // Replace with more images
+          '/static/images/Feedback.jpeg'
+        ]} />
+      </div>
+
+      {/* Playing the Violin */}
+      <div className="text-center bg-white shadow-lg rounded-lg p-4">
+        <h3 className="text-2xl font-semibold mb-4 flex justify-center items-center">
+          <Music className="w-6 h-6 text-gray-500 mr-2" /> Playing the Violin
+        </h3>
+        <Carousel images={[
+          '/static/images/Feedback.jpeg',
+          '/static/images/Feedback.jpeg', // Replace with more images
+          '/static/images/Feedback.jpeg'
+        ]} />
+      </div>
+
+      {/* Playing the Flute */}
+      <div className="text-center bg-white shadow-lg rounded-lg p-4">
+        <h3 className="text-2xl font-semibold mb-4 flex justify-center items-center">
+          <Music className="w-6 h-6 text-gray-500 mr-2" /> Playing the Flute
+        </h3>
+        <Carousel images={[
+          '/static/images/Feedback.jpeg',
+          '/static/images/Feedback.jpeg', // Replace with more images
+          '/static/images/Feedback.jpeg'
+        ]} />
+      </div>
+
+      {/* Playing Sports */}
+      <div className="text-center bg-white shadow-lg rounded-lg p-4">
+        <h3 className="text-2xl font-semibold mb-4 flex justify-center items-center">
+          <Users className="w-6 h-6 text-gray-500 mr-2" /> Playing Sports
+        </h3>
+        <Carousel images={[
+          '/static/images/Feedback.jpeg',
+          '/static/images/Feedback.jpeg', // Replace with more images
+          '/static/images/Feedback.jpeg'
+        ]} />
+      </div>
+
+      {/* Cooking */}
+      <div className="text-center bg-white shadow-lg rounded-lg p-4">
+        <h3 className="text-2xl font-semibold mb-4 flex justify-center items-center">
+          <ChefHat className="w-6 h-6 text-gray-500 mr-2" /> Cooking
+        </h3>
+        <Carousel images={[
+          '/static/images/Feedback.jpeg',
+          '/static/images/Feedback.jpeg', // Replace with more images
+          '/static/images/Feedback.jpeg'
+        ]} />
+      </div>
+    </div>
+  </div>
+</section>
+
 
           {/* Achievements Section */}
-          <section id="achievements" className="py-20 bg-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-semibold mb-8 text-center">Achievements</h2>
-              <div className="space-y-8">
-                {/* Add achievements similarly */}
-              </div>
-            </div>
-          </section>
+<section id="achievements" className="py-20 bg-gray-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl font-semibold mb-8 text-center">Achievements</h2>
+
+    {/* Achievements Section */}
+    <div className="space-y-8 mb-12">
+      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center">
+        <div className="text-blue-500 text-4xl mr-4">
+          <Medal className="w-12 h-12 mx-auto text-purple-600" />
+        </div>
+        <div>
+          <h3 className="text-xl font-medium">Silver Medalist in Academics (2023)</h3>
+          <p className="text-gray-600">
+            [Department of Artificial Intelligence and Data Science '25]
+          </p>
+        </div>
+      </div>
+      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center">
+        <div className="text-green-500 text-4xl mr-4">
+          <Trophy className="w-12 h-12 mx-auto text-purple-600" />
+        </div>
+        <div>
+          <h3 className="text-xl font-medium">Award for Academic Excellence (2023)</h3>
+          <p className="text-gray-600">Recognized for exceptional academic performance.</p>
+        </div>
+      </div>
+      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center">
+        <div className="text-red-500 text-4xl mr-4">
+          <Shield className="w-12 h-12 mx-auto text-purple-600" />
+        </div>
+        <div>
+          <h3 className="text-xl font-medium">B Certificate, NCC</h3>
+          <p className="text-gray-600">Certified under the National Cadet Corps program.</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Leadership Section */}
+    <div>
+      <h3 className="text-2xl font-semibold mb-6 text-center">Leadership</h3>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white shadow-lg rounded-lg p-6 flex items-center">
+          <div className="text-yellow-500 text-4xl mr-4">
+            <AwardIcon className="w-12 h-12 mx-auto text-yellow-500" />
+          </div>
+          <div>
+            <h3 className="text-xl font-medium">Sports Secretary (Student Council '24)</h3>
+            <ul className="list-disc list-inside text-gray-600">
+              <li>Led sports initiatives and organized events.</li>
+              <li>Organized Athlima'25, the largest Inter-College Sports Fest.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="bg-white shadow-lg rounded-lg p-6 flex items-center">
+          <div className="text-purple-500 text-4xl mr-4">
+            <Users className="w-12 h-12 mx-auto text-purple-500" />
+          </div>
+          <div>
+          <h3 className="text-xl font-medium">General Secretary (Club: Innovision '24)</h3>
+            <ul className="list-disc list-inside text-gray-600">
+              <li>Managed club activities and coordinated events..</li>
+              <li>Organized TechAdrishta'2025.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="bg-white shadow-lg rounded-lg p-6 flex items-center">
+          <div className="text-teal-500 text-4xl mr-4">
+            <Clipboard className="w-12 h-12 mx-auto text-teal-500" />
+          </div>
+          <div>
+            <h3 className="text-xl font-medium">Class Representative (2021-2025)</h3>
+            <p className="text-gray-600">Acted as a liaison between students and faculty.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
         </div>
       </main>
     </div>
