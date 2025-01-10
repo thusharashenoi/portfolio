@@ -138,49 +138,56 @@ function App() {
         )}
       </nav>
 
-      {/* Main Content */}
-      <main className="relative">
-        {/* Hero Section */}
-        <section id="hero" className="min-h-screen pt-16 flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center relative z-10">
-            <img
-              src="static/images/profile.jpg"
-              alt="Profile"
-              className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full mx-auto mb-8 border-4 border-purple-500 shadow-xl object-cover"
-              style={{ objectPosition: 'center' }}
-            />
-            <h1 className="text-4xl sm:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-purple-400">Thushara R Shenoi</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-black-300 mb-8">
-              AI/ML Engineer | Tech Enthusiast | Traveller
-            </p>
-            <div className="flex justify-center space-x-4">
-              <a href="https://github.com/thusharashenoi" className="text-black-400 hover:text-white transition-colors">
-                <Github className="w-6 h-6" />
-              </a>
-              <a href="https://www.linkedin.com/in/thusharashenoi/" className="text-black-400 hover:text-white transition-colors">
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a href="mailto:thushara.shenoi@gmail.com" className="text-black-400 hover:text-white transition-colors">
-                <Mail className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
-        </section>
+{/* Main Content */}
+<main className="relative">
+  <section id="hero" className="min-h-screen pt-16 flex items-center bg-cover bg-center relative" style={{ backgroundImage: 'url("/static/images/background.jpg")' }}>
+    {/* Overlay to enhance text visibility */}
+    <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
 
-{/* Content Sections */}
-<div className="bg-white p-15 rounded-xl shadow-xl">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center relative z-10">
+      {/* Profile Image with Animation */}
+      <img
+        src="static/images/profile.jpg"
+        alt="Profile"
+        className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full mx-auto mb-8 border-4 border-purple-500 shadow-xl object-cover transform transition-transform duration-300 ease-in-out hover:scale-110 animate__animated animate__fadeIn animate__delay-1s"
+        style={{ objectPosition: 'center' }}
+      />
+      <h1 className="text-4xl sm:text-6xl font-bold mb-4 text-white">
+        Hi, I'm <span className="text-purple-400">Thushara R Shenoi</span>
+      </h1>
+      <p className="text-xl sm:text-2xl text-gray-100 mb-8">
+        AI/ML Engineer | Tech Enthusiast | Traveller
+      </p>
+      <div className="flex justify-center space-x-4">
+        {/* Updated Icon Styles */}
+        <a href="https://github.com/thusharashenoi" className="text-white hover:text-purple-400 transition-colors">
+          <Github className="w-6 h-6" />
+        </a>
+        <a href="https://www.linkedin.com/in/thusharashenoi/" className="text-white hover:text-purple-400 transition-colors">
+          <Linkedin className="w-6 h-6" />
+        </a>
+        <a href="mailto:thushara.shenoi@gmail.com" className="text-white hover:text-purple-400 transition-colors">
+          <Mail className="w-6 h-6" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div className="bg-gray-200 p-15 rounded-xl shadow-xl">
   {/* About Section */}
-  <section id="about" className="py-20 bg-white-100">
+  <section id="about" className="py-20 bg-gray-200 flex items-center justify-center">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Wrapper div for white rectangle and shadow */}
-      <div className="bg-white rounded-lg shadow-2xl p-6">
+      <div className="bg-white rounded-lg shadow-2xl p-6 about-section mx-auto">
         <div className="flex items-center space-x-8">
           {/* Left Side (Image) */}
           <div className="w-1/2">
-              <img src="/static/images/Thushara.jpg" alt="Thushara" className="rounded-full shadow-lg w-60 h-680 object-cover mx-auto" />
-            </div>
+            <img
+              src="/static/images/Thushara.jpg"
+              alt="Thushara"
+              className="rounded-full shadow-lg w-60 h-680 object-cover mx-auto"
+            />
+          </div>
           {/* Right Side (Text) */}
           <div className="w-1/2">
             <div className="bg-purple-400 text-white rounded-xl p-8 shadow-xl">
@@ -740,10 +747,15 @@ function App() {
     </div>
   </div>
 </section>
+<footer className="bg-gray-800 text-white text-center py-4">
+  <p>Year: {new Date().getFullYear()} | All rights belong to Thushara Shenoi</p>
+</footer>
         </div>
       </main>
     </div>
+    
   );
+
 }
 
 export default App;
