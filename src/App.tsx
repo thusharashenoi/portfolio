@@ -138,81 +138,82 @@ function App() {
       </div>
     </div>
   </section>
-
-  <div className="bg-gray-200 p-15 rounded-xl shadow-xl">
-  {/* About Section */}
-  <section id="about" className="py-20 bg-gray-200 flex items-center justify-center ">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Wrapper div for white rectangle and shadow */}
-      <div className="bg-white rounded-lg shadow-2xl p-6 about-section mx-auto">
-        <div className="flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0 lg:space-x-8">
-          {/* Image Section */}
-          <div className="w-full lg:w-1/2">
-            <img
-              src="/static/images/Thushara.jpg"
-              alt="Thushara"
-              className="rounded-full shadow-lg w-full max-w-xs lg:w-60 h-auto object-cover mx-auto"
-            />
-          </div>
-          {/* Text Section */}
-          <div className="w-full lg:w-1/2">
-            <div className="bg-purple-400 text-white rounded-xl p-8 shadow-xl">
-              <h2 className="text-3xl font-semibold mb-4 text-center lg:text-left">About Me</h2>
-              <p>
-                I'm Thushara, a final-year student at Sikkim Manipal Institute of Technology, pursuing B.Tech in Artificial Intelligence and Data Science with a deep passion for Economics.
-                I'm a creator at heart, whether it's through crafting innovative AI solutions, capturing the world through my photography, or designing visuals that tell compelling stories. I also enjoy video editing and bringing creative ideas to life through design.
-                As a violinist and flautist, music adds rhythm and harmony to my life, teaching me the value of precision and creativity. Coupled with my love for travel, every experience I gather inspires my personal and professional growth.
-              </p>
-              <p className="text-white leading-relaxed mt-4 text-center lg:text-left">
-                Let's build something extraordinary together!
-              </p>
-              {/* View Resume Button */}
-              <div className="mt-6 text-center">
-                <button
-                  onClick={() => setShowResume(true)}
-                  className="bg-white text-purple-500 px-6 py-2 rounded-lg shadow hover:bg-purple-500 hover:text-white transition"
-                >
-                  View Resume
-                </button>
+      {/* About Section */}
+      <section id="about" className="py-20 bg-gray-200 flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Wrapper div for white rectangle and shadow */}
+          <div className="bg-white rounded-lg shadow-2xl p-6 about-section mx-auto">
+            <div className="flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0 lg:space-x-8">
+              {/* Image Section */}
+              <div className="w-full lg:w-1/2">
+                <img
+                  src="/static/images/Thushara.jpg"
+                  alt="Thushara"
+                  className="rounded-full shadow-lg w-full max-w-xs lg:w-60 h-auto object-cover mx-auto"
+                />
+              </div>
+              {/* Text Section */}
+              <div className="w-full lg:w-1/2">
+                <div className="bg-purple-400 text-white rounded-xl p-8 shadow-xl">
+                  <h2 className="text-3xl font-semibold mb-4 text-center lg:text-left">About Me</h2>
+                  <p>
+                    I'm Thushara, a final-year student at Sikkim Manipal Institute of Technology, pursuing B.Tech in Artificial Intelligence and Data Science with a deep passion for Economics.
+                    I'm a creator at heart, whether it's through crafting innovative AI solutions, capturing the world through my photography, or designing visuals that tell compelling stories. I also enjoy video editing and bringing creative ideas to life through design.
+                    As a violinist and flautist, music adds rhythm and harmony to my life, teaching me the value of precision and creativity. Coupled with my love for travel, every experience I gather inspires my personal and professional growth.
+                  </p>
+                  <p className="text-white leading-relaxed mt-4 text-center lg:text-left">
+                    Let's build something extraordinary together!
+                  </p>
+                  {/* View Resume Button */}
+                  <div className="mt-6 text-center lg:text-left">
+                    <button
+                      onClick={() => setShowResume(true)}
+                      className="bg-white text-purple-500 px-6 py-2 rounded-lg shadow hover:bg-purple-500 hover:text-white transition"
+                    >
+                      View Resume
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  {/* Resume Modal */}
-  {showResume && (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-8 shadow-lg relative max-w-lg w-full">
-        {/* Close Button */}
-        <button
-          onClick={() => setShowResume(false)}
-          className="absolute top-4 right-4 text-gray-500 hover:text-black"
-        >
-          &times;
-        </button>
-        {/* Resume Content */}
-        <h2 className="text-xl font-semibold mb-4">My Resume</h2>
-        <iframe
-          src="static/images/Thushara_Shenoi_Resume.pdf"
-          className="w-full h-96 border rounded-lg"
-          title="Resume"
-        ></iframe>
-        {/* Download Button */}
-        <div className="mt-4 flex justify-end">
-          <a
-            href="/static/resume.pdf"
-            download
-            className="bg-purple-500 text-white px-4 py-2 rounded-lg shadow hover:bg-purple-600 transition"
-          >
-            Download
-          </a>
+      {/* Resume Modal */}
+      {showResume && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 shadow-lg relative max-w-3xl w-full mx-4">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowResume(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl"
+            >
+              &times;
+            </button>
+            {/* Resume Header */}
+            <h2 className="text-xl font-semibold text-center mb-4">Thushara Shenoi</h2>
+            {/* Resume Content */}
+            <div className="w-full h-[65vh] overflow-y-auto border rounded-lg">
+              <iframe
+                src="/static/images/Thushara_Shenoi_Resume.pdf"
+                className="w-full h-full"
+                title="Resume"
+              ></iframe>
+            </div>
+            {/* Download Button */}
+            <div className="mt-4 flex justify-end">
+              <a
+                href="/static/resume.pdf"
+                download
+                className="bg-purple-500 text-white px-4 py-2 rounded-lg shadow hover:bg-purple-600 transition"
+              >
+                Download
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  )}
+      )}
 
 <section id="education" className="py-20 bg-gray-50 min-h-screen flex items-center justify-center">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -562,7 +563,7 @@ function App() {
       <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Random Forest</span>
     </div>
     <a 
-      href="https://github.com/your-github-link-here" 
+      href="https://github.com/thusharashenoi/Pacman" 
       className="text-purple-600 hover:text-purple-800 transition-colors flex items-center space-x-2"
       target="_blank"
       rel="noopener noreferrer"
@@ -609,17 +610,6 @@ function App() {
       <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Forecasting</span>
       <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Data Viz</span>
     </div>
-    
-    {/* GitHub Link */}
-    <a 
-      href="https://github.com/your-github-link-here" 
-      className="text-purple-600 hover:text-purple-800 transition-colors flex items-center space-x-2"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Github className="w-5 h-5" />
-      <span className="text-sm font-medium">View on Github</span>
-    </a>
   </div>
 
   {/* Project 3 */}
@@ -679,15 +669,6 @@ function App() {
       <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">Raspberry Pi</span>
       <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">LLaMA</span>
     </div>
-    <a 
-      href="https://github.com/your-github-link-here" 
-      className="text-purple-600 hover:text-purple-800 transition-colors flex items-center space-x-2"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Github className="w-5 h-5" />
-      <span className="text-sm font-medium">View on Github</span>
-    </a>
   </div>
 </div>
 </div>
@@ -855,12 +836,9 @@ function App() {
 <footer className="bg-gray-800 text-white text-center py-4">
   <p>Year: {new Date().getFullYear()} | All rights belong to Thushara Shenoi</p>
 </footer>
-        </div>
       </main>
-    </div>
-    
+</div>
   );
-
 }
 
 export default App;
