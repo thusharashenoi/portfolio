@@ -732,7 +732,7 @@ function App() {
 </section>
 
 {/* Hobbies Section */}
-<section id="hobbies" className="py-20 flex justify-center items-center border-[30px] border-black bg-purple-100"> {/* Added light purple background */}
+<section id="hobbies" className="py-20 flex justify-center items-center border-[30px] border-black bg-gray"> {/* Added light purple background */}
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 className="text-3xl font-semibold mb-8 text-center">Hobbies</h2>
     <div className="bg-white shadow-lg rounded-lg p-8"> {/* Wrapper for shadow and padding */}
