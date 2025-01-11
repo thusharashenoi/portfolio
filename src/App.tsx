@@ -838,7 +838,7 @@ function App() {
     &copy; {new Date().getFullYear()} Thushara Shenoi. All rights reserved.
   </p>
   <p className="text-xs">
-    Last updated: January 10, 2025
+    Last updated: January 11, 2025
   </p>
 </footer>
       </main>
