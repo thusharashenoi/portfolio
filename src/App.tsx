@@ -835,10 +835,10 @@ function App() {
 </section>
 <footer className="bg-gray-800 text-white text-center py-4">
   <p className="text-sm">
-    &copy; {new Date().getFullYear()} Thushara Shenoi. All rights reserved.
+    &copy; {new Date().getFullYear()} Thushara R Shenoi. All rights reserved.
   </p>
   <p className="text-xs">
-    Last updated: January 11, 2025
+    Last updated: January 11, 2025.
   </p>
 </footer>
       </main>
